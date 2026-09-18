@@ -28,11 +28,9 @@ public class Pedido {
 
     // (este método ya no calcula descuento, solo suma precios)
 
-    public double calcularSubtotal() {
+    public double calcularSubtotal(){
         double subtotal = 0;
-        for (double precio : precios) {
-            subtotal += precio;
-        }
+        for (double precio : precios) subtotal += precio;
         return subtotal;
     }
 
