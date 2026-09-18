@@ -33,6 +33,21 @@ public class Pedido {
         for (double precio : precios) subtotal += precio;
         return subtotal;
     }
+    /* 
+    antes estaba en pedido que era de alto nive, pero ahora actua como su 
+    propia clase de alto nivel donde esta la logica de imprimir
+
+    public void imprimirRecibo() {
+        ImpresoraTermica impresora = new ImpresoraTermica();
+        pedido dependia de este objeto que era de bajo nivel por que solo era un detalle
+        de impresion
+        impresora.imprimir("Recibo de " + cliente + ": $" + calcularTotal());
+        
+    }
+    public void enviarCorreoConfirmacion() {
+        System.out.println("Enviando correo de confirmación a " + cliente + "...");
+    }
+    */
 
     public String getCliente() {
         return cliente;
