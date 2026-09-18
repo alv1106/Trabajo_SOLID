@@ -40,7 +40,7 @@ public class App {
         // Pedido nunca tuvo (ni tiene ahora) este método: la responsabilidad
         // de notificar por correo vive en su propia clase, inyectada con el
         // pedido como parámetro.
-        new enviarCorreoConfirmacion().enviarConfirmacion(pedido);
+        new EnviarCorreoConfirmacion().enviarConfirmacion(pedido);
 
         // El código cliente confía en que TODO MetodoPago se puede cobrar igual...
         /* 
