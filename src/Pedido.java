@@ -28,6 +28,24 @@ public class Pedido {
 
     // (este método ya no calcula descuento, solo suma precios)
 
+    // Single Responsability Principle (SRP)
+
+    /*public double calcularTotal() {
+        double subtotal = 0;
+        for (double precio : precios) {
+            subtotal += precio;
+        }
+
+        if (tipoCliente.equals("REGULAR")) {
+            return subtotal;
+        } else if (tipoCliente.equals("VIP")) {
+            return subtotal * 0.9;
+        } else if (tipoCliente.equals("EMPLEADO")) {
+            return subtotal * 0.5;
+        }
+        return subtotal;
+    }*/
+
     public double calcularSubtotal(){
         double subtotal = 0;
         for (double precio : precios) subtotal += precio;
@@ -36,6 +54,11 @@ public class Pedido {
     /* 
     antes estaba en pedido que era de alto nivel, pero ahora actua como su 
     propia clase de alto nivel donde esta la logica de imprimir
+
+    public void guardarEnBaseDeDatos() {
+        System.out.println("Conectando a la BD...");
+        System.out.println("INSERT INTO pedidos VALUES (...)");
+    }
 
     public void imprimirRecibo() {
         ImpresoraTermica impresora = new ImpresoraTermica();
