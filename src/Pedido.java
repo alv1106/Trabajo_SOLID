@@ -27,25 +27,6 @@ public class Pedido {
     }
 
     // (este método ya no calcula descuento, solo suma precios)
-        /* 
-    // REVISAR (1): calcula el total Y decide el descuento con un if/else
-    // que crece cada vez que el restaurante inventa un tipo de cliente nuevo.
-    public double calcularTotal() {
-        double subtotal = 0;
-        for (double precio : precios) {
-            subtotal += precio;
-        }
-
-        if (tipoCliente.equals("REGULAR")) {
-            return subtotal;
-        } else if (tipoCliente.equals("VIP")) {
-            return subtotal * 0.9;
-        } else if (tipoCliente.equals("EMPLEADO")) {
-            return subtotal * 0.5;
-        }
-        return subtotal;
-    }
-    */
 
     public double calcularSubtotal(){
         double subtotal = 0;
@@ -53,7 +34,7 @@ public class Pedido {
         return subtotal;
     }
     /* 
-    antes estaba en pedido que era de alto nive, pero ahora actua como su 
+    antes estaba en pedido que era de alto nivel, pero ahora actua como su 
     propia clase de alto nivel donde esta la logica de imprimir
 
     public void imprimirRecibo() {
