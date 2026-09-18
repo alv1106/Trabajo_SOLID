@@ -8,6 +8,10 @@ public class App {
         // Pedido ya no tiene constructor vacío ni setters: el cliente y el
         // tipo de descuento se pasan directo al constructor. "VIP" ya no es
         // un String, es una instancia de TipoCliente.
+
+        /*/
+        El pedido original 
+        */
         Pedido pedido = new Pedido("Ana", new ClienteVip());
         pedido.agregarPlato("Bandeja paisa", 28000);
         pedido.agregarPlato("Limonada", 6000);
