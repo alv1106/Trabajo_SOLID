@@ -51,6 +51,14 @@ public class Pedido {
         for (double precio : precios) subtotal += precio;
         return subtotal;
     }
+            /* 
+    // REVISAR (2): Pedido también sabe persistir datos...
+    la clase pedido tiene multiples responsabilidades 
+    public void guardarEnBaseDeDatos() {
+        System.out.println("Conectando a la BD...");
+        System.out.println("INSERT INTO pedidos VALUES (...)");
+    }
+    */
     /* 
     antes estaba en pedido que era de alto nivel, pero ahora actua como su 
     propia clase de alto nivel donde esta la logica de imprimir
@@ -67,6 +75,9 @@ public class Pedido {
         impresora.imprimir("Recibo de " + cliente + ": $" + calcularTotal());
         
     }
+
+
+
     public void enviarCorreoConfirmacion() {
         System.out.println("Enviando correo de confirmación a " + cliente + "...");
     }
