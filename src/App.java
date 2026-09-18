@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class App {
     public static void main(String[] args) {
 
@@ -14,13 +16,12 @@ public class App {
 
         // El código cliente confía en que TODO MetodoPago se puede cobrar igual...
         List<MetodoPago> pagosDelDia = List.of(
-            new PagoTarjeta(),
-            new PagoEfectivo(),
-            new PagoPuntosFidelidad()
-        );
+                new PagoTarjeta(),
+                new PagoEfectivo(),
+                new PagoPuntosFidelidad());
 
         for (MetodoPago pago : pagosDelDia) {
-            pago.cobrar(15000);  // esto revienta con PagoPuntosFidelidad si el monto supera los puntos
+            pago.cobrar(15000); // esto revienta con PagoPuntosFidelidad si el monto supera los puntos
         }
 
         // El mesero queda obligado a "implementar" trabajos que no le corresponden
