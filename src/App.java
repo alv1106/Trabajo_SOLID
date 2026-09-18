@@ -10,8 +10,22 @@ public class App {
 
         System.out.println("Total: " + pedido.calcularTotal());
         pedido.guardarEnBaseDeDatos();
-        pedido.imprimirRecibo();
+
+        /* 
+        //pedido.imprimirRecibo();
+        pedido ya no tiene el metodo imprimir recibo
         pedido.enviarCorreoConfirmacion();
+        */
+       Impresora termica = new ImpresoraTermica();
+       ImprimirRecibo impresion = new ImprimirRecibo(termica);
+       impresion.imprimir(pedido, pedido.calcularSubtotal());
+
+
+
+
+
+
+       pedido.enviarCorreoConfirmacion();
 
         // El código cliente confía en que TODO MetodoPago se puede cobrar igual...
         /* 
@@ -34,6 +48,7 @@ public class App {
         for (MetodoPago pago : pagosDelDia) {
             if (!pago.cobrar(15000)) {
                 System.out.println("No se pudo procesar el pago con ");
+            }
         }
                 
         /* 
@@ -48,5 +63,12 @@ public class App {
         AtenderMesa mesero = new Mesero();
 
         mesero.atenderMesa();
+
+        
+        ImprimirRecibo imprimir = new ImprimirRecibo(termica);
+
+
+        
     }
+
 }
